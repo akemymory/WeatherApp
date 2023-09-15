@@ -88,7 +88,7 @@ async function checkWeather(city) {
       }
     }
 
-    document.querySelector(".city").innerHTML += `<br>${formattedLocalTime}`;
+    document.querySelector(".time").innerHTML += `<br>${formattedLocalTime}`;
     document.querySelector(".weather").style.display = "block";
     document.querySelector(".error").style.display = "none";
   }
