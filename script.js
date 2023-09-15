@@ -80,6 +80,12 @@ async function checkWeather(city) {
       weatherIcon.src = "images/drizzle.png";
     } else if (data.weather[0].main == "Mist") {
       weatherIcon.src = "images/mist.png";
+    } else if (data.weather[0].main == "Overcast clouds") {
+      if (isDay) {
+        weatherIcon.src = "images/clouds.png";
+      } else {
+        weatherIcon.src = "images/clouds-night.png";
+      }
     }
 
     document.querySelector(".city").innerHTML += `<br>${formattedLocalTime}`;
