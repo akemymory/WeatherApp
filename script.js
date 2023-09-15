@@ -47,10 +47,19 @@ async function checkWeather(city) {
       cardContainer.style.background =
         "linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)";
       document.querySelector(".card").style.color = "black";
+
+      document.querySelector(".col:nth-child(1) img").src =
+        "images/humidity.png";
+      document.querySelector(".col:nth-child(2) img").src = "images/wind.png";
     } else {
       cardContainer.style.background =
         "linear-gradient(to top, #09203f 0%, #537895 100%)";
       document.querySelector(".card").style.color = "white";
+
+      document.querySelector(".col:nth-child(1) img").src =
+        "images/humidity-white.png";
+      document.querySelector(".col:nth-child(2) img").src =
+        "images/wind-white.png";
     }
 
     if (data.weather[0].main == "Clouds") {
@@ -71,13 +80,6 @@ async function checkWeather(city) {
       weatherIcon.src = "images/drizzle.png";
     } else if (data.weather[0].main == "Mist") {
       weatherIcon.src = "images/mist.png";
-    }
-
-    if (!isDay) {
-      const humidityIcon = document.querySelector(".col:nth-child(1) img");
-      const windIcon = document.querySelector(".col:nth-child(2) img");
-      humidityIcon.src = "images/humidity-white.png";
-      windIcon.src = "images/wind-white.png";
     }
 
     document.querySelector(".city").innerHTML += `<br>${formattedLocalTime}`;
